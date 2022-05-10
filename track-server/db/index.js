@@ -1,10 +1,7 @@
 const mongoose = require('mongoose')
 
-const mongoURI =
-  'mongodb+srv://trackerZayed:zayed_3996@cluster0.6gnbd.mongodb.net/trackerApp?retryWrites=true&w=majority'
-
 const connectDB = () => {
-  mongoose.connect(mongoURI, {
+  mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
   })
   mongoose.connection.on('connected', () => {
